@@ -1,9 +1,11 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Product } from "./model/Product";
+import { Observable } from "rxjs";
 
 @Injectable()
-export class ProductService {
-  private url = 'https://fakestoreapi.com/products';
+export class ProductsService {
+  private url = 'http://my-json-server.typicode.com/jusbrasil/hackathon-laboratoria/product-list';
 
   httpOptions = {
     Headers: new HttpHeaders({ 'content-type': 'application/json' })
@@ -11,7 +13,7 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  getProduct() {
-    return this.http.get(this.url);
+  getProduct(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.url);
   }
 }

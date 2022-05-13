@@ -10,7 +10,7 @@ import { FilterComponent } from './components/store/filter/filter.component';
 import { ProductListComponent } from './components/store/product-list/product-list.component';
 import { StoreComponent } from './components/store/store.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductService } from './components/store/product-list/product-list.component.service';
+import { ProductsService } from './components/store/product-list/product-list.component.service';
 import { ProductItemComponent } from './components/store/product-list/product-item/product-item.component';
 
 
@@ -31,7 +31,7 @@ import { ProductItemComponent } from './components/store/product-list/product-it
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ProductService],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
